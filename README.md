@@ -22,6 +22,7 @@ The goal of this lab was to understand how Docker networking works internally by
 
 ## 🧱 Project Structure
 docker-networking-lab/
+
 │
 ├── README.md
 
@@ -53,6 +54,7 @@ docker ps -a
 ```
 📸
 
+![Step 1](01-clean-environment.png)
 
 ## 🔹 Step 2 — Create Custom Bridge Network
 
@@ -63,6 +65,7 @@ docker network ls
 ```
 📸
 
+![Step 2](02-network-created-devnet.png)
 
 ## 🔹 Step 3 — Deploy Nginx Container
 
@@ -74,7 +77,7 @@ Docker automatically pulled the image if not available locally.
 
 📸
 
-
+![Step 3](03-nginx-image-pulled.png)
 ## 🔹 Step 4 — Handle Container Name Conflict
 
 Docker enforces unique container names.
@@ -82,7 +85,7 @@ Attempting to reuse a name results in a conflict error.
 
 📸
 
-
+![Step 4](04-container-name-conflict.png)
 ## 🔹 Step 5 — Verify Running Containers
 
 Confirmed that the Nginx container is running.
@@ -91,7 +94,7 @@ docker ps
 ```
 📸
 
-
+![Step 5](05-nginx-container-running.png)
 ## 🔹 Step 6 — Launch Alpine Client Container
 
 Started an interactive Alpine container inside the same network.
@@ -100,7 +103,7 @@ docker run -it --name client --network devnet alpine sh
 ```
 📸
 
-
+![Step 6](06-alpine-container-started-successfully.png)
 ## 🔹 Step 7 — Install Networking Utilities
 
 Installed required networking tools inside Alpine.
@@ -109,6 +112,7 @@ apk add iputils wget
 ```
 📸
 
+![Step 7](07-iputils-installed.png)
 
 ## 🔹 Step 8 — Test Network Connectivity (ICMP)
 
@@ -122,7 +126,7 @@ ping web
 
 📸
 
-
+![Step 8](08-ping-web-success.png)
 ## 🔹 Step 9 — Test HTTP Service Communication
 
 Verified web service accessibility from Alpine.
@@ -137,7 +141,7 @@ wget -O- http://web
 
 📸
 
-
+![Step 9](09-http-communication-success.png)
 ## 🔹 Step 10 — Cleanup
 
 Removed containers and network after lab completion.
@@ -145,9 +149,9 @@ Removed containers and network after lab completion.
 docker rm -f web
 docker network rm devnet
 ```
+
 📸
-
-
+![Step 10](10-lab-cleanup-complete.png)
 ## 🧠 Key Concepts Learned
 
 - Custom bridge networks
