@@ -27,6 +27,7 @@ docker-networking-lab/
 ├── README.md
 
 └── screenshots/
+
     ├── 01-clean-environment.png
 
     ├── 02-network-created-devnet.png
